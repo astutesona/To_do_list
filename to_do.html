@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        #tdl{
+            border:8px inset rgb(254 75, 51);
+            height:auto;
+            width:300px;
+            text-align: center;
+            background:linear-gradient(rgb(255, 75, 51),yellow);
+            padding:20px;
+            border-radius:20px;
+        }
+        #task{
+            margin-left:25px;
+            margin-top:20px;
+            height:auto;
+            text-align: none;
+            list-style:none;
+        }
+        #task li{
+            background-color:antiquewhite;
+            width:98%;
+            border-radius:15px;
+           display:flex;
+           justify-content: space-between;
+           padding:5px;
+        }
+       
+    </style>
+</head>
+<body>
+   <div id="tdl">
+    <h1>TO-DO LIST</h1>
+    <input type="text" id="ib">
+    <button id="btn">Add</button>
+    <div id="task">
+
+    </div>
+   </div>
+   <script>
+    var bt=document.getElementById('btn');
+
+    bt.addEventListener('click',()=>{
+        var it=document.getElementById('ib').value;//value input box
+        var tsk=document.getElementById('task');//child container
+        var dbn=document.createElement('button');
+        dbn.textContent="Delete";
+        var addTask=document.createElement('li');//to create a new element
+        addTask.textContent=it;
+        addTask.appendChild(dbn);
+        tsk.appendChild(addTask);
+        dbn.addEventListener('click',()=>{
+            addTask.remove();
+        })
+
+
+    });
+
+
+
+
+   </script>
+
+</body>
+</html>
